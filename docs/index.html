@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>crossfeed</title>
+<meta name="description" content="A music player that keeps your listening diary on your phone, wherever you listen from.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Geist:wght@300;400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --hot-a: #2ed9c3;
+    --hot-b: #4d7cff;
+    --wash-a: #101519;
+    --wash-b: #0a0d12;
+    --wash-c: #040406;
+    --ink: #ffffff;
+    --ink-muted: rgba(255, 255, 255, 0.85);
+    --ink-faint: rgba(255, 255, 255, 0.55);
+    --fill: rgba(0, 0, 0, 0.22);
+    --stroke: rgba(255, 255, 255, 0.35);
+    --stroke-soft: rgba(255, 255, 255, 0.18);
+    --sans: "Geist", ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --marker: "Permanent Marker", cursive;
+    --script: "Caveat", cursive;
+    --tight: 6px;
+    --small: 10px;
+    --medium: 16px;
+    --large: 22px;
+    --section: 30px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: linear-gradient(var(--wash-a), var(--wash-b) 40%, var(--wash-c));
+    color: var(--ink);
+    font: 400 17px/1.6 var(--sans);
+    letter-spacing: -0.1px;
+    text-transform: lowercase;
+    overflow-x: hidden;
+  }
+
+  /* the app drifts two blurred lights behind everything; so does this */
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    width: 70vmax;
+    height: 70vmax;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: -1;
+  }
+  body::before {
+    background: radial-gradient(circle, var(--hot-a), transparent 65%);
+    top: -18vmax;
+    left: -14vmax;
+    animation: drift 38s linear infinite;
+  }
+  body::after {
+    background: radial-gradient(circle, var(--hot-b), transparent 65%);
+    bottom: -22vmax;
+    right: -16vmax;
+    animation: drift 46s linear infinite reverse;
+  }
+  @keyframes drift {
+    0% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(6vmax, 4vmax, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+
+  main { max-width: 1080px; margin-inline: auto; padding: 0 var(--large) 120px; }
+
+  header {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--medium);
+    max-width: 760px;
+  }
+
+  h1 {
+    font-family: var(--marker);
+    font-size: clamp(58px, 13vw, 132px);
+    line-height: 0.94;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: lowercase;
+  }
+
+  .lede { font-size: clamp(19px, 2.4vw, 26px); color: var(--ink-muted); margin: 0; max-width: 26ch; }
+
+  .quiet { color: var(--ink-faint); font-size: 15px; }
+
+  .actions { display: flex; flex-wrap: wrap; gap: var(--small); align-items: center; margin-top: var(--small); }
+
+  .button {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #04121a;
+    font-weight: 600;
+    background: linear-gradient(120deg, var(--hot-a), var(--hot-b));
+  }
+  .button.ghost {
+    background: var(--fill);
+    color: var(--ink);
+    border: 1px solid var(--stroke);
+    backdrop-filter: blur(12px);
+  }
+
+  section { padding: clamp(70px, 12vh, 130px) 0; }
+
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 6vw, 76px); align-items: center; }
+  .row.flip .words { order: 2; }
+
+  h2 {
+    font-family: var(--marker);
+    font-size: clamp(30px, 4.4vw, 50px);
+    line-height: 1.1;
+    letter-spacing: 0.4px;
+    margin: 0 0 var(--medium);
+  }
+
+  p { margin: 0 0 var(--medium); color: var(--ink-muted); }
+  p:last-child { margin-bottom: 0; }
+
+  .kicker {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    color: var(--hot-a);
+    margin-bottom: var(--small);
+  }
+
+  /* screenshots sit in a slim handset, so they read as a phone and not a poster */
+  .shot {
+    border-radius: 34px;
+    border: 1px solid var(--stroke-soft);
+    background: var(--fill);
+    padding: 8px;
+    backdrop-filter: blur(14px);
+    max-width: 340px;
+    margin-inline: auto;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+  }
+  .shot img, .shot video { width: 100%; display: block; border-radius: 27px; }
+  .shot.wide { max-width: 420px; border-radius: 22px; }
+  .shot.wide img { border-radius: 16px; }
+
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--medium); }
+  .pair .shot { max-width: none; }
+
+  .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--medium); margin-top: var(--section); }
+  .figure {
+    border: 1px solid var(--stroke-soft);
+    background: var(--fill);
+    border-radius: 26px;
+    padding: var(--large);
+    backdrop-filter: blur(14px);
+  }
+  .figure b { display: block; font-family: var(--script); font-weight: 600; font-size: 42px; line-height: 1; }
+  .figure span { font-size: 14px; color: var(--ink-faint); }
+
+  .note {
+    border-left: 2px solid var(--hot-a);
+    padding-left: var(--medium);
+    color: var(--ink-faint);
+    font-size: 15px;
+  }
+
+  footer {
+    border-top: 1px solid var(--stroke-soft);
+    padding-top: var(--section);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--medium);
+    justify-content: space-between;
+    align-items: center;
+    color: var(--ink-faint);
+    font-size: 15px;
+  }
+
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.seen { opacity: 1; transform: none; }
+
+  @media (max-width: 820px) {
+    .row { grid-template-columns: 1fr; }
+    .row.flip .words { order: 0; }
+    header { min-height: 84vh; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    body::before, body::after { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+
+<header>
+  <h1>crossfeed</h1>
+  <p class="lede">your listening diary, wherever you happen to be listening from.</p>
+  <p class="quiet">
+    spotify, apple music, a browser tab, the files on your phone — it all lands in one history that
+    lives on the device and answers to you.
+  </p>
+  <div class="actions">
+    <a class="button" href="../crossfeed-player-0.3.2.apk">download for android</a>
+    <a class="button ghost" href="#diary">see what it does</a>
+  </div>
+</header>
+
+<section id="diary" class="reveal">
+  <div class="row">
+    <div class="words">
+      <div class="kicker">the diary</div>
+      <h2>it counts, whoever is playing</h2>
+      <p>
+        crossfeed reads the now playing card that every music app on android already publishes. so a
+        song counts the same whether it came from spotify, apple music, youtube music in a browser
+        tab, or a file sitting on your phone.
+      </p>
+      <p>
+        nothing is uploaded to make that work. there is no account, no scrobbling service in the
+        middle, and no third party holding a copy of what you listen to.
+      </p>
+      <p class="note">
+        video apps and browsers are refused by default. turn them on and a video still has to prove
+        it is music — the artist has to be someone the catalogue actually lists — so lectures and
+        clips stay out of your history.
+      </p>
+      <div class="figures">
+        <div class="figure"><b>27h</b><span>this week</span></div>
+        <div class="figure"><b>604</b><span>plays</span></div>
+        <div class="figure"><b>296</b><span>artists</span></div>
+      </div>
+    </div>
+    <div class="shot"><img src="img/listening.jpg" alt="the listening page, showing what is playing and the week's totals"></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="row flip">
+    <div class="words">
+      <div class="kicker">one player</div>
+      <h2>drive any app from here</h2>
+      <p>
+        whatever is playing appears at the top of the page and in the bar above the tabs — with a
+        scrubber, a play button and skip. pause apple music from inside crossfeed and apple music
+        pauses.
+      </p>
+      <p>
+        it works because android hands out the controls, not because those apps agreed to anything.
+        no api key, no developer account, no permission from spotify.
+      </p>
+    </div>
+    <div class="shot"><img src="img/sheet.jpg" alt="the full player controlling a track playing in apple music"></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="row">
+    <div class="words">
+      <div class="kicker">links</div>
+      <h2>a link for whoever you are sending it to</h2>
+      <p>
+        share any music link into crossfeed and it finds the same song everywhere else. open it in
+        the app you use, or copy the link for the service your friend uses.
+      </p>
+      <p>
+        share a playlist and it opens up into its songs, each one shareable in its own right. the
+        search on the player page reaches the whole catalogue too, and tags the results already on
+        your phone so you can play them on the spot.
+      </p>
+    </div>
+    <div class="pair">
+      <div class="shot"><img src="img/links.jpg" alt="one song listed across apple music, spotify, youtube music, tidal and deezer, each with a copy button"></div>
+      <div class="shot"><img src="img/search.jpg" alt="search results mixing songs from this phone with catalogue results"></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="row flip">
+    <div class="words">
+      <div class="kicker">sing along</div>
+      <h2>the words, and what they mean</h2>
+      <p>
+        lyrics scroll in time with the song. for anything not in your own language there is a switch
+        that puts the meaning under each line as you go — no second screen, no leaving the page.
+      </p>
+      <p>
+        translation runs on the phone. a language pack is fetched once, and after that it works with
+        no connection at all. the words themselves are never sent anywhere.
+      </p>
+    </div>
+    <div class="shot wide"><img src="img/singalong.jpg" alt="the sing along controls: original, romanised, and what does it mean"></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="row">
+    <div class="words">
+      <div class="kicker">your history</div>
+      <h2>take it with you, and ask it anything</h2>
+      <p>
+        every play, every total, every finish rate, written to a spreadsheet you own. eleven sheets,
+        saved straight to downloads.
+      </p>
+      <p>
+        which makes it something you can hand to any ai you like and simply ask — what did i play to
+        death in march, what did i abandon halfway, what have i not touched since last winter. the
+        charts in the app are a starting point, not the limit of what your own history can tell you.
+      </p>
+      <p class="note">
+        it imports back too, so moving to a new phone costs you nothing.
+      </p>
+    </div>
+    <div class="shot"><img src="img/export.jpg" alt="the storage and export cards in settings"></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="row flip">
+    <div class="words">
+      <div class="kicker">auxshare</div>
+      <h2>a small room, not an audience</h2>
+      <p>
+        share what you are playing with the handful of people you actually swap music with. see
+        theirs as it happens, react to it, reply with a song of your own.
+      </p>
+      <p>
+        it is off until you turn it on, it is people you added by handle and nobody else, and it can
+        be paused for an hour or a day when you would rather not be watched. your diary stays on
+        your phone either way — only what you choose to share ever leaves.
+      </p>
+    </div>
+    <div class="shot"><img src="img/auxshare.jpg" alt="the auxshare feed as a grid of sleeves from friends"></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="row">
+    <div class="words">
+      <div class="kicker">the settings</div>
+      <h2>nothing on unless you say so</h2>
+      <p>
+        every permission is optional and every one says what it unlocks. they are checked again each
+        time you open the app, so if you take one back it shows here.
+      </p>
+      <p>
+        sharing, location, browser capture, translation — all off or on by your hand, none of them
+        required to keep a diary.
+      </p>
+    </div>
+    <div class="shot"><img src="img/settings.jpg" alt="permissions and sharing settings"></div>
+  </div>
+</section>
+
+<footer>
+  <div>crossfeed player · android 8 and up · free, no account</div>
+  <div><a class="button" href="../crossfeed-player-0.3.2.apk">download the apk</a></div>
+</footer>
+
+</main>
+
+<script>
+  const seen = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("seen");
+        seen.unobserve(entry.target);
+      }
+    }
+  }, { rootMargin: "-60px" });
+  document.querySelectorAll(".reveal").forEach((el) => seen.observe(el));
+</script>
+
+</body>
+</html>
