@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>crossfeed &middot; privacy</title>
+<meta name="description" content="what crossfeed stores, what it sends, and how to delete it">
+<style>
+@font-face{font-family:"Marker";src:url("fonts/permanent_marker.ttf") format("truetype");font-weight:400;font-display:swap}
+:root{--bg:#0b0b0d;--panel:#111114;--line:#232327;--ink:#f2f2f0;--muted:#9a9aa0;--faint:#6b6b72;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 ui-sans-serif,-apple-system,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:38px 22px 90px}
+h1{font-family:"Marker",system-ui,sans-serif;font-size:30px;font-weight:400;margin-bottom:6px}
+.sub{color:var(--faint);font-size:14px;margin-bottom:34px}
+h2{font-family:"Marker",system-ui,sans-serif;font-size:21px;font-weight:400;margin:34px 0 12px}
+p{color:#d3d3d6;margin-bottom:13px}
+ul{margin:0 0 14px 20px;color:#d3d3d6}
+li{margin-bottom:7px}
+b{color:var(--ink);font-weight:620}
+a{color:#ff8a3d}
+table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;color:#d3d3d6}
+th{color:var(--faint);font-weight:500;font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+.card{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:16px 18px;margin-bottom:16px}
+.card p:last-child{margin-bottom:0}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--faint);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>crossfeed privacy policy</h1>
+<div class="sub">applies to Crossfeed and Crossfeed Player &middot; last updated 12 August 2026</div>
+
+<p>Crossfeed is built so that almost nothing leaves your phone. This page says exactly what stays, what goes, and how to get rid of it.</p>
+
+<h2>the short version</h2>
+<div class="card">
+  <p>Your listening history and your music library never leave your device. There are no adverts, no analytics, no trackers and no third-party SDKs of any kind.</p>
+  <p>One feature, <b>auxshare</b>, sends data to a server, and only after you switch it on. Nothing else does.</p>
+</div>
+
+<h2>what stays on your phone</h2>
+<ul>
+  <li><b>Your listening history.</b> Every play, with the track, artist, album, app and how long you listened. Stored in a private database only Crossfeed can read.</li>
+  <li><b>Your music library.</b> Titles, artists, albums and file locations, read from Android's media store so the app can list and play them.</li>
+  <li><b>Your settings</b>, including which apps you route links to.</li>
+</ul>
+<p>None of this is transmitted anywhere. You can erase the history at any time from the listening tab, and uninstalling the app deletes all of it.</p>
+
+<h2>notification access</h2>
+<p>The listening diary works by reading the <b>now playing</b> card that music apps publish: track, artist, album and position. This needs Android's notification access permission, which you grant yourself and can revoke at any time.</p>
+<p>Crossfeed does not read, store or transmit the contents of any other notification. Notifications from messaging, email, banking or any other app are ignored entirely.</p>
+
+<h2>what auxshare sends, if you turn it on</h2>
+<p>Auxshare is off until you create a handle and move the sharing switches. It has no email address, no password and no real name.</p>
+<table>
+  <tr><th>data</th><th>when</th><th>who can see it</th></tr>
+  <tr><td>Your handle and an anonymous account id</td><td>When you create a handle</td><td>People you connect with</td></tr>
+  <tr><td>Track, artist, album, cover image address, which app you used, how long you listened, and when</td><td>Only while <b>share what i play</b> is on, and only after about twenty seconds of a song</td><td>People you have accepted</td></tr>
+  <tr><td>Reactions, saved tracks and your connections</td><td>When you use them</td><td>You, and the person reacted to</td></tr>
+</table>
+<p>Your listening history as a whole is never uploaded. Only individual tracks, one at a time, while sharing is on.</p>
+
+<h2>services crossfeed talks to</h2>
+<p>To fill in lyrics, credits and cover art, the app queries these services with a song title and artist. No account identifier, handle or device identifier is sent with those requests, and none of them are told who is asking.</p>
+<ul>
+  <li><b>LRCLIB</b> for synced lyrics</li>
+  <li><b>MusicBrainz</b> for credits</li>
+  <li><b>Apple iTunes Search</b> for catalogue matches and cover art</li>
+</ul>
+<p>The auxshare server is operated by the developer on Cloudflare, in the United States. All traffic uses HTTPS.</p>
+
+<h2>what leaves the phone, and when</h2>
+<p>Your listening history is never uploaded. Some features do ask other services a question, and a
+question names the track it is about, so each one is listed here and each can be turned off.</p>
+<ul>
+  <li><b>Genre lookups.</b> Off unless you turn them on. Sends a title and artist to Apple so the
+  genres chart can fill in.</li>
+  <li><b>Cover art and cross service links.</b> Sends a title and artist to Apple when a song needs a
+  sleeve, or when you ask for a link to the same song elsewhere.</li>
+  <li><b>Music played in a browser.</b> Off unless you turn it on. Sends the title a browser or video
+  app is publishing, so it can be checked against the catalogue before it counts. Titles that turn
+  out not to be music are discarded.</li>
+  <li><b>Translation.</b> Runs entirely on the phone. A language pack is downloaded once from Google,
+  which is a file request and carries nothing about you or what you are playing. Lyrics are never
+  sent anywhere.</li>
+</ul>
+
+<h2>the update notice</h2>
+<p>The app asks the crossfeed server whether there is a notice to show, such as a new version being
+available. The answer is usually nothing. The request carries no identifier and works without an
+account.</p>
+
+<h2>how long it is kept</h2>
+<p>Posts are deleted after a year, and reactions after thirty days. Saves and connections stay until you remove them or wipe your account.</p>
+
+<h2>deleting your data</h2>
+<p>In the app: <b>auxshare &rarr; wipe my account</b>. That removes your handle, posts, saves, reactions and every connection from the server, permanently and immediately.</p>
+<p>If you no longer have the app installed, see <a href="delete">the account deletion page</a>.</p>
+
+<h2>children</h2>
+<p>Crossfeed is not directed at children under 13 and does not knowingly collect data from them.</p>
+
+<h2>changes</h2>
+<p>If this policy changes, the date at the top changes with it, and any change that widens what is collected will be announced in the app before it takes effect.</p>
+
+<footer>
+  Questions, or a deletion request: <a href="mailto:murdawk@hypixonic.com">murdawk@hypixonic.com</a><br>
+  <a href="./">back to the setup guide</a>
+</footer>
+
+</div>
+</body>
+</html>
