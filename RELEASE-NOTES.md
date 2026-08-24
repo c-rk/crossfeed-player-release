@@ -1,10 +1,14 @@
-# crossfeed player 0.5.3
+# crossfeed player 0.5.5
 
-Download [crossfeed-player-0.5.3.apk](crossfeed-player-0.5.3.apk) and check it against
+Download [crossfeed-player-0.5.5.apk](crossfeed-player-0.5.5.apk) and check it against
 `SHA256SUMS.txt` if you like. Android will ask you to allow installs from your browser or file
 manager the first time. Installing over an older copy keeps your diary and your handle.
 
 ## new since 0.4
+
+**Three services, not five.** Search links and shared links now cover apple music, spotify and
+youtube music. Tidal and deezer are gone, since nobody here used them. Plays from those apps still
+count in your diary if you have them installed.
 
 **A widget.** Your week in figures on the home screen, time, plays and artists over the last seven
 days, read straight off the phone so it works with no connection. Tap the corner and it turns over
