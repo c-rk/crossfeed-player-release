@@ -1,6 +1,6 @@
-# crossfeed player 0.5.7
+# crossfeed player 0.5.8
 
-Download [crossfeed-player-0.5.7.apk](crossfeed-player-0.5.7.apk) and check it against
+Download [crossfeed-player-0.5.8.apk](crossfeed-player-0.5.8.apk) and check it against
 `SHA256SUMS.txt` if you like. Android will ask you to allow installs from your browser or file
 manager the first time. Installing over an older copy keeps your diary and your handle.
 
