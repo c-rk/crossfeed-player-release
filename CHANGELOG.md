@@ -1,5 +1,20 @@
 # changelog
 
+## 0.5.9
+
+The app is redrawn in glass, and the accent follows whatever is playing rather than being a property
+of the app: green on spotify, red on apple music, and the colour of any other player's own icon when
+it is something else. The aux stays sage throughout, since that page belongs to other people. Four
+pages swiped between, a nav that floats over the content, a diary in sections, and an export that
+can be restored rather than only merged.
+
+A security review of the whole app closed several ways a page or a reply could hold it still or
+bring it down. The patterns that read a shared link are bounded, a sleeve is measured before it is
+decoded, an update must come from where the app is published and has a ceiling, and a build with no
+signing key stops rather than falling back to the public debug key. Pausing sharing now also pauses
+the sleeve lookups, which were still telling apple what was playing. A failed post no longer writes
+the track title to the log.
+
 ## 0.5.3
 
 The widget's flip button moves to the corner, out of the way of the figures at any size.

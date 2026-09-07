@@ -1,47 +1,56 @@
-# crossfeed player 0.5.8
+# crossfeed player 0.5.9
 
-Download [crossfeed-player-0.5.8.apk](crossfeed-player-0.5.8.apk) and check it against
+Download [crossfeed-player-0.5.9.apk](crossfeed-player-0.5.9.apk) and check it against
 `SHA256SUMS.txt` if you like. Android will ask you to allow installs from your browser or file
 manager the first time. Installing over an older copy keeps your diary and your handle.
 
-## new since 0.4
+## new since 0.5.8
 
-**Three services, not five.** Search links and shared links now cover apple music, spotify and
-youtube music. Tidal and deezer are gone, since nobody here used them. Plays from those apps still
-count in your diary if you have them installed.
+**The app is redrawn.** Glass throughout: colour that sits behind the page rather than on it, four
+places instead of a menu, and a nav that floats over a feed rather than cutting it off. The pages
+are swiped between now, and all four stay where you left them.
 
-**A widget.** Your week in figures on the home screen, time, plays and artists over the last seven
-days, read straight off the phone so it works with no connection. Tap the corner and it turns over
-to show who among your people is playing something right now. Tap anywhere else to open the app.
+**It wears whatever is playing.** The accent follows the app the music is coming from, so it turns
+green on spotify and red on apple music, and takes on the colour of any other player's own icon
+when it is something else. The aux stays sage whatever the rest is doing, because that page is
+about other people.
 
-**Sleeves arrive on time.** Artwork used to be looked up at the moment a play was posted, so the
-first post of a song usually went out bare and only gained a sleeve if you kept listening long
-enough for a second attempt. The lookup now starts when the song does. A track the catalogue has
-never heard of is retried a week later rather than written off for good.
+**One diary, in sections.** The listening page folds a day away, opens a play by tapping it, and
+carries a sparkline of the week. The card that did nothing is gone.
 
-**Your own music store.** Search links pointed at the american catalogue whatever your region was,
-so a release missing from it looked missing everywhere even when your own app could find it in
-seconds. Links now use your storefront, and settings lets you pick one if your phone and your
-subscription disagree.
+**The aux, reworked.** Three across, a ring around someone showing how far into a track they are,
+reactions on the row itself, hold for the three and double tap for the one. It says when nothing is
+being shared instead of looking like nobody posted, and it stops asking the same question a
+thousand times an hour.
 
-**Smaller on disk.** Artwork is stored as webp, roughly a third less space for the same picture.
+**A play can be handed to somebody**, and a play can be forgotten.
 
-## if you are coming from 0.3 or earlier
+**An export is a restore.** The zip carries the whole diary, sleeves and all, so bringing it back
+on another phone gives you the diary rather than folding it into an empty one.
 
-**The nearby radar is gone**, along with the location permission. It let anyone with an account
-claim any position and read back how far away you were, which was enough to pin someone to about a
-hundred metres and watch them move. It earned little and risked a lot.
+## what a security review closed
 
-**Genre lookups are off by default.** They asked apple about tracks you had played, every time the
-listening page opened, with nothing said about it. Settings now has a card listing everything the
-app ever asks anyone else, and that one waits to be turned on.
+The whole app was read through looking for ways in. Nothing let another app take it over, and
+nothing was reaching the network that should not have been, but several things are tighter now.
 
-**Sing along can show what the words mean**, translated on the phone. The language pack is fetched
-once and works offline after that. No lyric is ever sent anywhere.
+**A page cannot hold the app still any more.** The patterns that read a shared link's page could be
+made to crawl by a page that never closes a tag, or by a title made mostly of spaces. Both are
+bounded now, and a page is read up to a sensible length rather than to its own claim.
 
-**Music played in a browser can count**, if you want it to. A video has to name an artist the
-catalogue actually lists before it reaches your diary, so lectures and clips stay out. Off unless
-you turn it on.
+**A sleeve is measured before it is opened.** A small file can hold an enormous number of pixels,
+and asking for all of them at once was enough to bring the app down. Anything absurd is refused,
+and a large one is read at a fraction of its size.
+
+**An update has to come from where the app is published**, has a ceiling on how much it will
+download, and a build with no signing key now stops rather than quietly signing itself with a key
+everybody has.
+
+**Pausing sharing pauses the lookups too.** Asking apple for a sleeve tells apple what is playing,
+which is the part worth pausing, and it carried on through a pause. It does not now.
+
+**A failed post no longer writes the track into the phone's log**, a banner from the server has to
+be a web address, and an imported file is read against a ceiling rather than read whole and
+measured afterwards.
 
 ## as always
 
