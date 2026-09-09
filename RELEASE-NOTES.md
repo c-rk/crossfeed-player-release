@@ -1,8 +1,18 @@
-# crossfeed player 0.5.9
+# crossfeed player 0.6.0
 
-Download [crossfeed-player-0.5.9.apk](crossfeed-player-0.5.9.apk) and check it against
+Download [crossfeed-player-0.6.0.apk](crossfeed-player-0.6.0.apk) and check it against
 `SHA256SUMS.txt` if you like. Android will ask you to allow installs from your browser or file
 manager the first time. Installing over an older copy keeps your diary and your handle.
+
+## new since 0.5.9
+
+**A diary row says when and how long.** It used to say only the time, so a play read the same
+whether it was this afternoon or three weeks ago, and there was no telling a song heard right
+through from one skipped after ten seconds. Every row now carries the date, the time and how long
+you actually listened. The year appears only when it is not this one.
+
+**The aux says how long somebody stayed with a song.** It already said how long ago they played it,
+which is the less interesting half.
 
 ## new since 0.5.8
 
@@ -15,7 +25,7 @@ green on spotify and red on apple music, and takes on the colour of any other pl
 when it is something else. The aux stays sage whatever the rest is doing, because that page is
 about other people.
 
-**One diary, in sections.** The listening page folds a day away, opens a play by tapping it, and
+**One diary, in sections.** The listening page folds a day away and opens a play by tapping it, and
 carries a sparkline of the week. The card that did nothing is gone.
 
 **The aux, reworked.** Three across, a ring around someone showing how far into a track they are,
@@ -28,7 +38,7 @@ thousand times an hour.
 **An export is a restore.** The zip carries the whole diary, sleeves and all, so bringing it back
 on another phone gives you the diary rather than folding it into an empty one.
 
-## what a security review closed
+## what a security review closed in 0.5.9
 
 The whole app was read through looking for ways in. Nothing let another app take it over, and
 nothing was reaching the network that should not have been, but several things are tighter now.

@@ -1,5 +1,13 @@
 # changelog
 
+## 0.6.0
+
+A diary row carries the date, the time and how long the play actually lasted, where it used to
+carry the time alone. The year is left off when it is the current one. The aux gained the same
+figure: it already said how long ago somebody played something, and now says how long they stayed
+with it. Both sit on their own line in the smallest body size, so nothing shares a line with a
+title or a name that can grow.
+
 ## 0.5.9
 
 The app is redrawn in glass, and the accent follows whatever is playing rather than being a property
