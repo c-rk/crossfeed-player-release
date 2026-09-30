@@ -1,5 +1,12 @@
 # changelog
 
+## 0.6.1
+
+A fresh install closed the moment it opened. The aux asks a phone with no handle to pick one, and
+that page was a scrolling screen inside another scrolling screen, which cannot be measured. Every
+page is laid out at launch, so any phone without a handle crashed before showing anything, while
+phones that already had one never took that path. The inner screen no longer scrolls on its own.
+
 ## 0.6.0
 
 A diary row carries the date, the time and how long the play actually lasted, where it used to

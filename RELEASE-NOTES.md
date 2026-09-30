@@ -1,8 +1,16 @@
-# crossfeed player 0.6.0
+# crossfeed player 0.6.1
 
-Download [crossfeed-player-0.6.0.apk](crossfeed-player-0.6.0.apk) and check it against
+Download [crossfeed-player-0.6.1.apk](crossfeed-player-0.6.1.apk) and check it against
 `SHA256SUMS.txt` if you like. Android will ask you to allow installs from your browser or file
 manager the first time. Installing over an older copy keeps your diary and your handle.
+
+## fixed in 0.6.1
+
+**A fresh install opens again.** On a phone with no handle yet, 0.5.9 and 0.6.0 closed the moment
+they started, every time. The page that asks you to pick a handle was built so that it could not
+be measured, and the app lays out every page when it opens, so it never got as far as showing one.
+Phones that already had a handle never met that page, which is why updating over an older copy
+worked. If it crashed for you, install this one and it will open.
 
 ## new since 0.5.9
 
