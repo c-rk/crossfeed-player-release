@@ -1,8 +1,32 @@
-# crossfeed player 0.6.1
+# crossfeed player 0.6.2
 
-Download [crossfeed-player-0.6.1.apk](crossfeed-player-0.6.1.apk) and check it against
+Download [crossfeed-player-0.6.2.apk](crossfeed-player-0.6.2.apk) and check it against
 `SHA256SUMS.txt` if you like. Android will ask you to allow installs from your browser or file
 manager the first time. Installing over an older copy keeps your diary and your handle.
+
+## new in 0.6.2
+
+**How does it feel.** Six colours sit under what is playing. Tap the one that fits and it is noted
+against the song you have on, then the card folds away for a couple of minutes. Moods stay on your
+phone like the rest of the diary.
+
+**The weather.** Every day of your diary as one square that keeps dividing: one day fills it, then
+it splits into four, sixteen, sixty four as the days add up, and you watch it happen when it comes
+into view. A day wears the mood you noted, or a grey as deep as your listening. Tap a square to see
+that day and its most played song. Tap twice to open its month as a calendar, then its week, then
+the day hour by hour. Pinch, or the trail above it, to come back out.
+
+**A week from long ago.** A card brings back what you had on repeat this week a year ago, or as far
+back as your diary goes for now. Tap it to hear it again.
+
+**Same song, same second.** If you and a friend on the aux press play on the same song within a
+few seconds of each other, you are both told. Sharing has to be on for both of you.
+
+**Smaller things.** The name at the top of the diary now says whatever is actually playing, to
+match its colour. A song in a language with no translation says so, instead of offering a switch
+that does nothing. Exporting twice in a row points you at the file you just made. Your export now
+carries a mood beside each play and a sheet of every mood you noted, and bringing a diary back
+brings those too. The ring around a friend on the aux moves more smoothly.
 
 ## fixed in 0.6.1
 

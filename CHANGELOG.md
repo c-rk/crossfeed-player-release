@@ -1,5 +1,18 @@
 # changelog
 
+## 0.6.2
+
+A mood check in on the diary page notes how it feels against whatever is playing, then folds away
+for a couple of minutes; moods live in their own table on the phone and travel in the export as a
+column on each play and a sheet of their own. The weather shows every day of the diary as one
+square that keeps dividing, grows when it scrolls into view, and opens into a month, a week and a
+day by the hour; one tap selects a day, two open it, a pinch comes back out. A time capsule brings
+back what was on repeat this week a year ago, or as far back as the diary goes. Two friends who
+start the same song within seconds are told so. The pill at the top names whatever is playing, to
+match its colour; a song in a language with no translation shows the switch greyed and says why;
+an export repeated at once, or with nothing new since, points at the file already made. A playing
+song reports its progress to the aux every thirty seconds instead of forty five.
+
 ## 0.6.1
 
 A fresh install closed the moment it opened. The aux asks a phone with no handle to pick one, and
