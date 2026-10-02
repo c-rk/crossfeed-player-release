@@ -1,5 +1,16 @@
 # changelog
 
+## 0.6.3
+
+Battery savers stop the notification listener overnight on many phones and Android never rebinds
+it, so a fresh install recorded for a day and then went quiet. The listener now asks to be rebound
+the moment it is dropped, the app asks again on every return to the front (switching the listener
+off and on if a plain ask is ignored), and a fifteen minute job checks once and rebinds if needed,
+with no network and no wake lock. The diary shows a paused card when access is on but the listener
+is not running, and settings gains a background item that opens the battery list with a hint for
+the phone's brand. On the aux, tapping a handle or a live ring filters the feed to that person, the
+names under the rings are no longer clipped, and the "no audience" tagline is gone.
+
 ## 0.6.2
 
 A mood check in on the diary page notes how it feels against whatever is playing, then folds away

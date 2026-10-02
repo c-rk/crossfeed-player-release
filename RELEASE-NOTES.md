@@ -1,8 +1,26 @@
-# crossfeed player 0.6.2
+# crossfeed player 0.6.3
 
-Download [crossfeed-player-0.6.2.apk](crossfeed-player-0.6.2.apk) and check it against
+Download [crossfeed-player-0.6.3.apk](crossfeed-player-0.6.3.apk) and check it against
 `SHA256SUMS.txt` if you like. Android will ask you to allow installs from your browser or file
 manager the first time. Installing over an older copy keeps your diary and your handle.
+
+## fixed in 0.6.3
+
+**The diary keeps listening after the first day.** On many phones a fresh install noted songs for a
+day and then went quiet, while the app itself opened as usual. The phone's battery saver was
+putting the part that listens to sleep overnight, and Android never wakes it again on its own.
+Crossfeed now asks for it back the moment it is stopped, every time you open the app, and in a
+quick look every fifteen minutes that uses no network and keeps nothing awake. If it is still
+stopped, the diary page says it is paused, with a button to resume.
+
+**A new item in settings: keep listening in the background.** It opens the phone's battery list so
+crossfeed can be left alone, and on phones that hide a second switch of their own, it says where.
+
+## new in 0.6.3
+
+**Hear only one person on the aux.** Tap a handle in your people, or a ring at the top, and the feed
+shows only their plays. Tap it again, or the chip beside the feed title, for everyone. The line
+under the aux title now just says who you are and how many people are on it.
 
 ## new in 0.6.2
 

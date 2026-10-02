@@ -1,1 +1,1 @@
-1489f3109eab0612f0e9680ee84f13754a6535ec720b8ab851f8b73f8df01620 *crossfeed-player-0.6.2.apk
+23dca7def1750a5295441b45b719bdc66c147daea77eedff81e1490e6d2e5e9c *crossfeed-player-0.6.3.apk
