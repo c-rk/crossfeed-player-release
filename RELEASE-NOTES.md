@@ -1,8 +1,42 @@
-# crossfeed player 0.6.3
+# crossfeed player 0.6.4
 
-Download [crossfeed-player-0.6.3.apk](crossfeed-player-0.6.3.apk) and check it against
+Download [crossfeed-player-0.6.4.apk](crossfeed-player-0.6.4.apk) and check it against
 `SHA256SUMS.txt` if you like. Android will ask you to allow installs from your browser or file
-manager the first time. Installing over an older copy keeps your diary and your handle.
+manager the first time. Installing over an older copy keeps your diary and your handle. Going back
+to an older version afterwards needs an uninstall, so export a backup first if you might.
+
+## new in 0.6.4
+
+**A retro visualizer.** Under now playing on the diary page, and in place of the artwork in the
+full player. Tap it for the next style: spectrum bars, a scope, an ambient swirl, a pair of VU
+needles, or plasma. Hold it for a sensitivity slider and full screen, which turns with your phone
+and fades the song details after half a minute. Its button asks Android's permission to read the
+sound that is playing; Android calls that recording, but nothing is recorded. Without it the
+visualizer dreams up a beat.
+
+**How energetic your music is, and how you've been.** With that permission on, crossfeed measures
+each song as it plays: how hard and how often the beat hits, how bright it sounds, how much low end
+it carries. The score is the same at any volume on any phone, so songs measured anywhere add to a
+shared lookup that holds nothing but songs and scores. Songs not measured yet are filled from that
+lookup or from their tempo. Energy from the music and from your check-ins, and mood from your
+check-ins, show in the habits card for today, the week and the month, as two scales between
+calm and lively and low and bright.
+
+**The weather fills up.** How strong a square's colour is still says how long you listened; how far
+the colour fills it now says how energetic the day was.
+
+**Your export carries all of it.** An energy column on every play, a feeling sheet with every day
+and its rolling week and month, and an energy sheet of every song's score.
+
+**Hold a friend's handle** to pause them for anything from fifteen minutes to a week, or to say
+goodbye. Pausing stays on your phone and they are not told. Choosing a handle on the aux now also
+reaches back for their older plays, and the aux opens with more of the feed.
+
+**Smaller things.** Check-ins are hourly now, the same as the weather keeps them. Dragging or tapping
+the player's bar moves it at once. Mood colours deepen with how long you listened. Descriptions
+everywhere are shorter. Where you listened only shows once you use more than one app. A song opens
+in a browser, not back in crossfeed, when your music app is missing, and a double tap no longer
+opens it twice. The listener's clock only runs while music plays, which saves battery.
 
 ## fixed in 0.6.3
 

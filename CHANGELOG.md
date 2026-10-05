@@ -1,5 +1,25 @@
 # changelog
 
+## 0.6.4
+
+A retro visualizer with five styles (spectrum, scope, ambience, VU meters, plasma) sits under now
+playing and in the full player, with a sensitivity slider and a full screen view that rotates and
+fades its details. With the record audio permission it reads the playing sound (our own session
+for crossfeed's player, the output mix otherwise), levelled by a running peak; without it a
+generated beat drives it. A meter scores each song's energy from spectral flux, onset rate,
+centroid and low end share, all volume independent; readings of thirty seconds or more fold into a
+per song table and go to a shared lookup on the server (songs and scores only, behind an app key,
+weighted median of the last nine readings), with deezer tempo as the fallback. Energy and check-in
+mood give each day a feeling, shown in the habits card for today, seven and thirty days, as the
+fill of each weather square, and in the export (an energy column, a feeling sheet and an energy
+sheet, read back on restore). Holding a friend's handle pauses them locally or removes the
+connection; choosing a handle fetches their older plays from the server, and the first page of the
+aux is 45 posts. Check-ins are hourly. The player's bar follows seeks at once and can be dragged.
+Mood colours deepen with listening time. Descriptions are shortened. Where you listened needs more
+than one source. Routing falls back to a named browser, ignores a second tap during a lookup, and a
+second shared link replaces the first. The listener's ten second clock runs only during playback,
+with a five minute alert check while awake and idle, and the last alert shown is kept on disk.
+
 ## 0.6.3
 
 Battery savers stop the notification listener overnight on many phones and Android never rebinds
