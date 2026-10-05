@@ -173,6 +173,11 @@
   .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--medium); }
   .pair .shot { max-width: none; }
 
+  /* three screens of one feature, small enough to read as a set */
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--small, 12px); }
+  .trio .shot { max-width: none; border-radius: 18px; }
+  .trio .shot img { border-radius: 14px; }
+
   .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--medium); margin-top: var(--section); }
   .figure {
     border: 1px solid var(--stroke_soft);
@@ -345,8 +350,10 @@
       <div class="kicker">sing along</div>
       <h2>the words, and what they mean</h2>
       <p>
-        lyrics scroll in time with the song. for anything not in your own language there is a switch
-        that puts the meaning under each line as you go, in place, with no second screen.
+        lyrics scroll in time with the song, the line being sung drawn large. read them as written, as
+        romanised text in latin letters for when you can sing a language but not read its script, or
+        switch on what does it mean to see the meaning under each line as you go, in place, with no
+        second screen.
       </p>
       <p>
         translation runs on the phone. a language pack is fetched once and after that it works with
@@ -354,9 +361,13 @@
       </p>
     </div>
     <div>
-      <div class="shot wide"><img src="img/singalong.jpg" alt="the sing along screen showing a tamil song with each line translated underneath"></div>
+      <div class="trio">
+        <div class="shot"><img src="img/singalong-original.jpg" alt="sing along showing a tamil song in its own script, the current line large"></div>
+        <div class="shot"><img src="img/singalong-romanised.jpg" alt="the same song romanised into latin letters"></div>
+        <div class="shot"><img src="img/singalong-meaning.jpg" alt="the same song with an english meaning under every line"></div>
+      </div>
       <p class="credit">
-        kannukkul kannai, composed by a. r. rahman, sung by naresh iyer. the words belong to their
+        thanga thamarai magale, composed by a. r. rahman, sung by s. p. balasubrahmanyam. the words belong to their
         writers and rights holders, shown here only as the app displays them.
       </p>
     </div>
