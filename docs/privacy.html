@@ -38,7 +38,7 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:v
 <h2>the short version</h2>
 <div class="card">
   <p>Your listening history and your music library never leave your device. There are no adverts, no analytics, no trackers and no third-party SDKs of any kind.</p>
-  <p>One feature, <b>auxshare</b>, sends data to a server, and only after you switch it on. Nothing else does.</p>
+  <p>One feature, <b>auxshare</b>, sends data about you to a server, and only after you switch it on. A shared lookup of how energetic songs sound receives song titles and scores with nothing about who sent them, described below.</p>
 </div>
 
 <h2>what stays on your phone</h2>
@@ -68,7 +68,8 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:v
 <ul>
   <li><b>LRCLIB</b> for synced lyrics</li>
   <li><b>MusicBrainz</b> for credits</li>
-  <li><b>Apple iTunes Search</b> for catalogue matches and cover art</li>
+  <li><b>Apple iTunes Search</b> and <b>Deezer</b> for catalogue matches, cover art and a song's tempo</li>
+  <li><b>MusicBrainz</b>, given a recording's ISRC code, for that song's page on Spotify, YouTube Music or Tidal</li>
 </ul>
 <p>The auxshare server is operated by the developer on Cloudflare, in the United States. All traffic uses HTTPS.</p>
 
@@ -87,6 +88,22 @@ question names the track it is about, so each one is listed here and each can be
   which is a file request and carries nothing about you or what you are playing. Lyrics are never
   sent anywhere.</li>
 </ul>
+
+<h2>the retro visualizer and the record audio permission</h2>
+<p>The visualizer can follow the music that is already playing on your phone. Android only allows that
+with the <b>record audio</b> permission, which Crossfeed asks for only when you tap the visualizer's
+button or its item in settings. It reads the sound being played to the speakers or headphones, a few
+times a second, to draw the visualizer and to measure how energetic a song sounds. The microphone is
+never opened, and no audio is stored or sent anywhere. Without the permission the visualizer draws a
+made up beat instead.</p>
+
+<h2>song energy</h2>
+<p>With that permission on, Crossfeed measures how energetic each song sounds and keeps the score on your
+phone, where it feeds the habits card, the weather and your export. To spare other phones measuring
+the same song, a reading of at least thirty seconds is also sent to a shared lookup on the crossfeed
+server: the song's title, artist and rough length, and the score. Nothing about you goes with it: no
+handle, no account, no device identifier, and the server keeps no record of which phone sent which
+reading. The same lookup is asked for scores of songs you have played but not yet measured.</p>
 
 <h2>the update notice</h2>
 <p>The app asks the crossfeed server whether there is a notice to show, such as a new version being
