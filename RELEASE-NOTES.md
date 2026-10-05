@@ -1,9 +1,33 @@
-# crossfeed player 0.6.4
+# crossfeed player 0.6.5
 
-Download [crossfeed-player-0.6.4.apk](crossfeed-player-0.6.4.apk) and check it against
+Download [crossfeed-player-0.6.5.apk](crossfeed-player-0.6.5.apk) and check it against
 `SHA256SUMS.txt` if you like. Android will ask you to allow installs from your browser or file
 manager the first time. Installing over an older copy keeps your diary and your handle. Going back
 to an older version afterwards needs an uninstall, so export a backup first if you might.
+
+## new in 0.6.5
+
+**Songs open in your app far more often.** Tapping a song used to ask once and fall back to a
+search. Now crossfeed tries the title without guests, remasters or film credits, and the lead
+artist alone, and for spotify, youtube music and tidal it finds the recording's own page through
+its isrc. A small note says it is looking; after eleven seconds it opens your app's own search
+instead, never a browser, and keeps looking so the next tap is instant. Every song found is
+remembered on the phone.
+
+**Notes, a new visualizer.** A piano roll of the notes sounding over the last few seconds, the
+melody traced across it, and the chord and the key named as the song goes. The swirl is now
+halo, a ring of the spectrum breathing with the bass, and the vu meters are gone.
+
+**Beats for the whole song.** The visualizer used to stop catching beats a little way into a
+song, as its levelling pinned the bass at the ceiling. It keeps catching them now.
+
+**Cleaner meanings in sing along.** Lines are translated a few at a time so each has its
+neighbours for context, a chorus once, and a line that only comes back as a guess is left blank
+instead of showing something like "Tab".
+
+**Smaller things.** The weather's caption says what it shows: colour is mood, shade is time, fill
+is energy. The day streak no longer reads nought in the morning before anything has played.
+Where you listened names spotify and apple music even when they are not installed.
 
 ## new in 0.6.4
 

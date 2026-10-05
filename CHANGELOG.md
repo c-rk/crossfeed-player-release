@@ -1,5 +1,21 @@
 # changelog
 
+## 0.6.5
+
+Song lookup tries each song as written, with its title stripped of guests, remasters and film
+credits, and with only its lead artist, passing the song's length so a title only match can be
+checked; for spotify, youtube music and tidal, deezer's isrc for the recording is looked up on
+musicbrainz for the page there, since song.link closed its open api. Hits are kept on the phone
+for ninety days. A tap shows a finding note, waits at most eleven seconds, then opens the app's
+own search (spotify's search screen rather than a browser) while the lookup finishes in the
+background. Sing along translates four distinct lines at a time and drops a line that comes back
+as one word, as its own sounds in latin letters, or in its own script. A notes visualizer folds
+each frame onto the twelve notes as a piano roll with the strongest pitch, chord and key; the
+ambience swirl becomes a halo and the vu meters are removed. Levelling follows the loudest band
+and beats are read before levelling, so beat detection no longer dies a few seconds into a song.
+The weather caption names colour, shade and fill; the streak counts to yesterday until today has
+played; known services are named even when uninstalled. The diary gains a route_links table.
+
 ## 0.6.4
 
 A retro visualizer with five styles (spectrum, scope, ambience, VU meters, plasma) sits under now
