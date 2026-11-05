@@ -1,9 +1,45 @@
-# crossfeed player 0.6.5
+# crossfeed player 0.7.0
 
-Download [crossfeed-player-0.6.5.apk](crossfeed-player-0.6.5.apk) and check it against
+Download [crossfeed-player-0.7.0.apk](crossfeed-player-0.7.0.apk) and check it against
 `SHA256SUMS.txt` if you like. Android will ask you to allow installs from your browser or file
 manager the first time. Installing over an older copy keeps your diary and your handle. Going back
 to an older version afterwards needs an uninstall, so export a backup first if you might.
+
+## new in 0.7.0
+
+**Moments.** Give a stretch of listening a name: a drive, a party, a workout, or one of your own,
+with an icon, a colour and who you were with. Start it from the diary and stop it there or from its
+notification; everything played in between belongs to it. Each one opens as a chapter with its
+songs on repeat, most heard artists, the energy as it went and how you felt, ready to share. The
+diary can show just one moment, or just the ones with one person. A moment you usually start around
+this time is offered, never started for you. Allow nearby devices and connecting to a car stereo
+offers a drive, which ends when the car does.
+
+**Pitch, a new visualizer.** Laid out like a singing app: a keyboard named by octave, the voice
+drawn as a line across it, held notes as blocks, and a meter of the note and how many cents off it
+is. Pitch is measured the way tuners do it, so it names the note sung rather than an overtone, and
+leaves a gap where it is unsure instead of guessing.
+
+**Notes, more accurate.** The notes are read from the sound itself at a much finer grain, the tuning
+of the song is learned as it plays, sevenths and suspended chords are named as well, and a chord
+has to hold for a moment before it shows, so it no longer flickers.
+
+**Meaning, line by line and word by word.** Each lyric line is translated on its own, which stops
+meaning leaking between neighbours. The line being sung, or any line you tap, opens word by word,
+each word over what it means alone.
+
+**A better curator.** New songs come from the artists beside the ones you play most, songs you
+love are likelier to come up without the same few opening every list, the language of a song is
+told from its words as well as its genre, and a vibe from calm to lively shapes the list, easing in
+and building before it eases off.
+
+**Energy across the whole scale.** Scores used to bunch near the middle. They now spread from calm
+to lively, a steady beat counts for more than noise, and speech stops scoring beside dance music.
+Scores already on your phone are moved onto the new scale once.
+
+**Smaller things.** Settings fold into groups with fewer words, and a fresh install asks for its
+permissions once at the start. A friend you let in on the aux appears at once, and the aux keeps
+up every eight seconds while something is happening. The credits sheet is gone.
 
 ## new in 0.6.5
 

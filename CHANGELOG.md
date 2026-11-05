@@ -1,5 +1,21 @@
 # changelog
 
+## 0.7.0
+
+Moments: named listening ranges stored in a moments table (diary version 12), matched to plays by
+time, with an ongoing notification, a weekday suggestion, a recap and share, diary filters by name
+or person, and a drive offered when a car audio or hands free bluetooth device connects. A pitch
+visualizer measures pitch by YIN on the full waveform; notes read chroma from a windowed, padded
+4096 point transform by interpolated peaks with a learned tuning, and chords match templates
+including sevenths, sus4 and dim with a hold before showing. Translation runs one line at a time
+with a word by word gloss on the sung or tapped line. The curator draws from deezer's related
+artists of your favourites, weighs known songs by plays and recency, identifies language on the
+phone and shapes order by a chosen vibe. Energy readings are stretched over the whole scale by
+percentile with beat steadiness, tempo and loudness swing; the shared lookup keeps raw readings
+and stored scores are stretched once. Settings are grouped, a first run welcome asks for
+permissions, aux answers apply at once and sync every eight seconds while active. The credits
+sheet and its musicbrainz lookup are removed.
+
 ## 0.6.5
 
 Song lookup tries each song as written, with its title stripped of guests, remasters and film

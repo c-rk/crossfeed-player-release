@@ -64,11 +64,11 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:v
 <p>Your listening history as a whole is never uploaded. Only individual tracks, one at a time, while sharing is on.</p>
 
 <h2>services crossfeed talks to</h2>
-<p>To fill in lyrics, credits and cover art, the app queries these services with a song title and artist. No account identifier, handle or device identifier is sent with those requests, and none of them are told who is asking.</p>
+<p>To fill in lyrics, cover art and suggestions, the app queries these services with a song title and artist. No account identifier, handle or device identifier is sent with those requests, and none of them are told who is asking.</p>
 <ul>
   <li><b>LRCLIB</b> for synced lyrics</li>
-  <li><b>MusicBrainz</b> for credits</li>
   <li><b>Apple iTunes Search</b> and <b>Deezer</b> for catalogue matches, cover art and a song's tempo</li>
+  <li><b>Deezer</b>, given the names of artists you play most, for artists close to them, when you ask the curator for a playlist</li>
   <li><b>MusicBrainz</b>, given a recording's ISRC code, for that song's page on Spotify, YouTube Music or Tidal</li>
 </ul>
 <p>The auxshare server is operated by the developer on Cloudflare, in the United States. All traffic uses HTTPS.</p>
@@ -97,6 +97,13 @@ times a second, to draw the visualizer and to measure how energetic a song sound
 never opened, and no audio is stored or sent anywhere. Without the permission the visualizer draws a
 made up beat instead.</p>
 
+<h2>moments and the car</h2>
+<p>A moment is a named stretch of listening, such as a drive or a workout, kept on your phone with the
+rest of the diary. If you allow the <b>nearby devices</b> permission, Crossfeed notices when a car stereo
+connects over Bluetooth and offers to start a drive. It only checks what kind of device connected. A
+drive started this way keeps the stereo's Bluetooth address so it can end when the car disconnects, and
+nothing about it leaves the phone.</p>
+
 <h2>song energy</h2>
 <p>With that permission on, Crossfeed measures how energetic each song sounds and keeps the score on your
 phone, where it feeds the habits card, the weather and your export. To spare other phones measuring
@@ -114,7 +121,7 @@ account.</p>
 <p>Posts are deleted after a year, and reactions after thirty days. Saves and connections stay until you remove them or wipe your account.</p>
 
 <h2>deleting your data</h2>
-<p>In the app: <b>auxshare &rarr; wipe my account</b>. That removes your handle, posts, saves, reactions and every connection from the server, permanently and immediately.</p>
+<p>In the app: <b>settings &rarr; account &rarr; wipe my account</b>. That removes your handle, posts, saves, reactions and every connection from the server, permanently and immediately.</p>
 <p>If you no longer have the app installed, see <a href="delete">the account deletion page</a>.</p>
 
 <h2>children</h2>
